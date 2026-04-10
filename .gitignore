@@ -1,6 +1,82 @@
+# =========================
+# Node / npm
+# =========================
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# =========================
+# Environment Variables
+# =========================
 .env
-.next/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =========================
+# Build Outputs
+# =========================
 dist/
+build/
+.next/
+out/
+
+# =========================
+# Coverage / Testing
+# =========================
 coverage/
+test-results/
 playwright-report/
+
+# =========================
+# Web folder Playwright outputs
+# =========================
+web/test-results/
+web/playwright-report/
+
+# =========================
+# Logs
+# =========================
+logs
+*.log
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+.history/
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
+
+# =========================
+# Vercel
+# =========================
+.vercel
+
+# =========================
+# Next.js telemetry
+# =========================
+.next/cache
+
+# =========================
+# Playwright browser cache
+# =========================
+.playwright/
