@@ -40,3 +40,5 @@ This project follows a layered architecture:
 - Connects UI to pipeline
 
 ### Core Pipeline
+
+Deployment configured for Vercel
