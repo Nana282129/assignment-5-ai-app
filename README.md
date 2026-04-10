@@ -42,3 +42,5 @@ This project follows a layered architecture:
 ### Core Pipeline
 
 Deployment configured for Vercel
+
+Vercel deployment updated.
