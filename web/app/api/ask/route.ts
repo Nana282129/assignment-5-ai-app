@@ -1,23 +1,37 @@
 import { NextResponse } from 'next/server';
+import path from 'path';
+import { runInsightAssistant } from '../../../../src/runInsightAssistant.js';
 
 export async function POST(request: Request) {
-  const body = await request.json();
-  const question = body.question?.trim();
+  try {
+    const body = await request.json();
+    const question = body.question?.trim();
 
-  if (!question) {
+    if (!question) {
+      return NextResponse.json(
+        { error: 'Please enter a question.' },
+        { status: 400 }
+      );
+    }
+
+    const datasetPath = path.join(
+      process.cwd(),
+      '../data/sample-dataset.json'
+    );
+
+    const result = runInsightAssistant(datasetPath);
+
+    return NextResponse.json({
+      ...result,
+      insightText: `${result.analysis?.summary || 'Insight generated.'} Question asked: ${question}`
+    });
+
+  } catch (error) {
+    console.error(error);
+
     return NextResponse.json(
-      { error: 'Please enter a question.' },
-      { status: 400 }
+      { error: 'Failed to generate insight' },
+      { status: 500 }
     );
   }
-
-  return NextResponse.json({
-    analysis: {
-      summary: 'Dataset analyzed successfully.',
-      risks: ['Budget pressure', 'Timeline uncertainty'],
-      trends: ['Stable delivery progress'],
-      recommendations: ['Review budget usage', 'Monitor timeline closely']
-    },
-    insightText: `Insight result for: ${question}`
-  });
 }
