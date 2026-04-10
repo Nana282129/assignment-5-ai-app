@@ -1,28 +1,24 @@
 {
-  "name": "assignment-5-ai-app",
-  "version": "1.0.0",
-  "description": "Project planning documents are stored in the docs folder",
-  "main": "index.js",
-  "type": "module",
-  "directories": {
-    "doc": "docs",
-    "test": "tests"
-  },
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "vitest run tests --pool threads"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "playwright test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Nana282129/assignment-5-ai-app.git"
+  "dependencies": {
+    "next": "16.2.3",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Nana282129/assignment-5-ai-app/issues"
-  },
-  "homepage": "https://github.com/Nana282129/assignment-5-ai-app#readme",
   "devDependencies": {
-    "vitest": "^4.1.4"
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
   }
 }
