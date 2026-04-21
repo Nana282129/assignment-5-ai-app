@@ -44,3 +44,37 @@ This project follows a layered architecture:
 Deployment configured for Vercel
 
 Vercel deployment updated.
+
+
+## Assignment 6 Extension
+
+This project was extended for Assignment 6 by evaluating, defending, and improving the original Assignment 5 application.
+
+### Architecture
+
+The system is classified as prompt-first / long-context because it uses a small local JSON dataset and a direct analysis pipeline without retrieval or tool orchestration.
+
+### Evaluation
+
+The system was evaluated on:
+
+- output quality
+- end-to-end task success
+- upstream dataset validation
+
+Artifacts are included in:
+
+- `evaluation/cases/`
+- `evaluation/results/`
+- `tests/evaluation.test.js`
+
+### Failure Cases
+
+The evaluation included:
+
+- missing required dataset fields
+- generic output not fully aligned to the user question
+
+### Improvement
+
+The analysis and insight text generation were improved to reflect dataset values such as status, timeline, progress, and budget more clearly.
